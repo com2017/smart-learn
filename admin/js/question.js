@@ -196,7 +196,7 @@ function saveQuestion(course_id, quiz_id, question_id) {
 
         // Update questions on server and go to specific quiz for question
         setQuestions(JSON.stringify(questions), function() {
-            window.location.href = getAppRoot() + '/content/quiz.html?course_id=' + course_id + '&quiz_id=' + quiz_id;
+            window.location.href = getAppRoot() + 'content/quiz.html?course_id=' + course_id + '&quiz_id=' + quiz_id;
         });
     });
 }
@@ -225,7 +225,7 @@ function deleteQuestion(quiz_id, question_id) {
             // Update questions on server and go to quiz that contained question
             setQuestions(JSON.stringify(questions), function() {
                 getQuiz(quiz_id, function(quiz) {
-                    window.location.href = getAppRoot() + '/content/quiz.html?course_id=' + quiz['courseID'] + '&quiz_id=' + quiz_id;
+                    window.location.href = getAppRoot() + 'content/quiz.html?course_id=' + quiz['courseID'] + '&quiz_id=' + quiz_id;
                 })
             });
         }

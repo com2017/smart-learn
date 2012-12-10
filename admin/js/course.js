@@ -15,7 +15,7 @@ function displayCourses() {
         if(courses != null) {
             // Display courses
             for(key in courses['courses']) {
-                var course = '<a class="list-group-item transition" href="content/course.html?course_id=' + courses['courses'][key].courseID + '">' + courses['courses'][key].courseTitle + '</a>';
+                var course = '<a class="list-group-item transition" href='+getAppRoot()+'admin/content/course.html?course_id=' + courses['courses'][key].courseID + '>' + courses['courses'][key].courseTitle + '</a>';
                 $('#courses').append(course);
             }
         }
@@ -193,7 +193,7 @@ function saveCourse(course_id) {
 
         // Update courses on server and go to menu over courses
         setCourses(JSON.stringify(courses), function() {
-            window.location.href = getAppRoot()+'index.html';
+            window.location.href = getAppRoot()+'admin/index.html';
         });
     });
 }
@@ -235,7 +235,7 @@ function deleteCourse(course_id) {
 
                     // Update courses on server and go to menu over courses
                      setCourses(JSON.stringify(courses), function() {
-                        window.location.href = getAppRoot()+'index.html';
+                        window.location.href = getAppRoot()+'admin/index.html';
                      });
                 } else {
                     alert("Can't delete: " + course[0].courseTitle + " cause it contains quizes.");

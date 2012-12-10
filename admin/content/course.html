@@ -1,62 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Smart learn-Admin</title>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Smart learn-Admin</title>
 
-    <!-- Bootstrap -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-     <!-- W3 CSS -->
-    <link href="../../css/w3.css" rel="stylesheet">
+        <!-- W3 CSS -->
+        <link href="../../css/w3.css" rel="stylesheet">
 
-	 <!-- Main CSS -->
-    <link href="../../css/main.css" rel="stylesheet">
+        <!-- Main CSS -->
+        <link href="../../css/main.css" rel="stylesheet">
 
-	<!-- Dropdown Suggetion Style -->
-  	<link href="../css/dropdown.css" rel="stylesheet">
+        <!-- Dropdown Suggetion Style -->
+        <link href="../css/dropdown.css" rel="stylesheet">
 
-	<!-- Summmernote -->
-	  <!--
-	<link href="../summernote/summernote.css" rel="stylesheet">
-	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-	-->
+        <!-- Summmernote -->
+        <!--
+      <link href="../summernote/summernote.css" rel="stylesheet">
+      <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+        -->
 
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    
+        <![endif]-->
+    </head>
+    <body>
 
-    <![endif]-->
-  </head>
-  <body>
-      
-  		<div id="header-wrapper">
+        <div id="header-wrapper">
             <nav class="navbar navbar-default" role="navigation">
-              <div class="container-fluid">
-                <div class="navbar-header">
-                  <a id="showhome" class="navbar-brand" href="#" onclick="locateHomePage();"><span id="logo-brand">Smart learn</span></a>
-                </div>
-                
-                <ul class="nav navbar-nav">
-                    <li id="showmentor"><a href="#" onclick="locateMentorHomePage();">Mentor</a></li>
-                    <li id="showstat"><a href="#" onclick="locateStatisticsHomePage();">Statistics</a></li>
-                    <li class="active" id="showadmin"><a href="#" onclick="locateAdminHomePage();">Administration</a></li>
-                 
-                </ul>
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a id="showhome" class="navbar-brand" href="#" onclick="locateHomePage();"><span id="logo-brand">Smart learn</span></a>
+                    </div>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li id="dhisHome"><a href="#" onclick="locateDhisHomePage();">DHIS Home</a></li>
-                </ul>
-              </div>
+                    <ul class="nav navbar-nav">
+                        <li id="showmentor"><a href="#" onclick="locateMentorHomePage();">Mentor</a></li>
+                        <li id="showstat"><a href="#" onclick="locateStatisticsHomePage();">Statistics</a></li>
+                        <li class="active" id="showadmin"><a href="#" onclick="locateAdminHomePage();">Administration</a></li>
+
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li id="dhisHome"><a href="#" onclick="locateDhisHomePage();">DHIS Home</a></li>
+                    </ul>
+                </div>
             </nav>
         </div>
 
-		<div class="w3-margin">
-            
+        <div class="w3-margin">
+
         </div>
 
         <div class="w3-margin w3-padding-small">
@@ -64,192 +64,192 @@
         </div>
 
 
-<div id="main_div" class="row">
-	<div class="container-fluid" >
-			<div class="col-md-3">
-				<div class="w3-card-2 w3-white w3-center" style="padding:30px 0;min-height:400px">
-					<h4>Courses</h4>
+        <div id="main_div" class="row">
+            <div class="container-fluid" >
+                <div class="col-md-3">
+                    <div class="w3-card-2 w3-white w3-center" style="padding:30px 0;min-height:400px">
+                        <h4>Courses</h4>
 
-                    <div id="div-divider">
-                        
+                        <div id="div-divider">
+
+                        </div>
+                        <div id="courses" class="list-group">
+
+                        </div>
                     </div>
-                    <div id="courses" class="list-group">
-                        
+                </div>
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 w3-padding-medium">
+                                    <div id="courseContainer" class="w3-card-2 w3-white w3-padding-xlarge">
+                                        <div id="course">
+                                            <label style="background:rgb(39, 102, 150)" class="list-group-item active" id="courseHeader"></label>
+
+                                            <form role="form" class="list-group-item">
+
+                                                <div class="form-group">
+                                                    <label for="courseTitle">Title</label>
+                                                    <input type="text" class="form-control" id="courseTitle" name="courseTitle" placeholder="What is the title for the course?">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="courseLevel">Level</label>
+                                                    <select class="selectpicker form-control" id="courseLevel"></select>
+                                                </div>
+
+                                                <button type="button" class="btn btn-info btn-block" id="courseSave" onclick="saveCourse(course_id);"></button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 w3-padding-medium showCol" style="display: none">
+                                    <div id="courseQuizzes" class="w3-card-2 w3-white w3-padding-xlarge">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 w3-padding-medium showCol" style="display: none">
+                                    <div id="courseMentors" class="w3-card-2 w3-white w3-padding-xlarge">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6 w3-padding-medium showCol" style="display: none">
+                                    <div id="courseAttendants" class="w3-card-2 w3-white w3-padding-xlarge">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-				</div>
-			</div>
-			<div class="col-md-9">
-				<div class="row">
-					<div class="container-fluid">
-						<div class="row">
-							<div class="col-md-6 w3-padding-medium">
-								<div id="courseContainer" class="w3-card-2 w3-white w3-padding-xlarge">
-									<div id="course">
-										<label style="background:rgb(39, 102, 150)" class="list-group-item active" id="courseHeader"></label>
-
-										<form role="form" class="list-group-item">
-
-											<div class="form-group">
-												<label for="courseTitle">Title</label>
-												<input type="text" class="form-control" id="courseTitle" name="courseTitle" placeholder="What is the title for the course?">
-											</div>
-
-								            <div class="form-group">
-								              <label for="courseLevel">Level</label>
-								              <select class="selectpicker form-control" id="courseLevel"></select>
-								            </div>
-
-											<button type="button" class="btn btn-info btn-block" id="courseSave" onclick="saveCourse(course_id);"></button>
-										</form>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 w3-padding-medium showCol" style="display: none">
-								<div id="courseQuizzes" class="w3-card-2 w3-white w3-padding-xlarge">
-									
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-md-6 w3-padding-medium showCol" style="display: none">
-								<div id="courseMentors" class="w3-card-2 w3-white w3-padding-xlarge">
-									
-								</div>
-							</div>
-							<div class="col-md-6 w3-padding-medium showCol" style="display: none">
-								<div id="courseAttendants" class="w3-card-2 w3-white w3-padding-xlarge">
-									
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			
-
-			<!-- <div class="row">
-	  			<div class="container-fluid">
-		  			<div class="col-md-6 col-md-offset-3 list-group" id="courseContainer">
-						<div id="course">
-							<label style="background:rgb(39, 102, 150)" class="list-group-item active" id="courseHeader"></label>
-
-							<form role="form" class="list-group-item">
-
-								<div class="form-group">
-									<label for="courseTitle">Title</label>
-									<input type="text" class="form-control" id="courseTitle" name="courseTitle" placeholder="What is the title for the course?">
-								</div>
-
-					            <div class="form-group">
-					              <label for="courseLevel">Level</label>
-					              <select class="selectpicker form-control" id="courseLevel"></select>
-					            </div>
-
-								<button type="button" class="btn btn-info btn-block" id="courseSave" onclick="saveCourse(course_id);"></button>
-							</form>
-						</div>
-		  			</div>
-	  			</div>
-			</div> -->
-		</div>
-</div>
-
-<div class="w3-margin clearfix">
-				
-</div>
+                </div>
 
 
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../js/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../js/bootstrap.min.js"></script>
-  	<script src="../js/main.js"></script>
+
+                <!-- <div class="row">
+                        <div class="container-fluid">
+                                <div class="col-md-6 col-md-offset-3 list-group" id="courseContainer">
+                                        <div id="course">
+                                                <label style="background:rgb(39, 102, 150)" class="list-group-item active" id="courseHeader"></label>
+
+                                                <form role="form" class="list-group-item">
+
+                                                        <div class="form-group">
+                                                                <label for="courseTitle">Title</label>
+                                                                <input type="text" class="form-control" id="courseTitle" name="courseTitle" placeholder="What is the title for the course?">
+                                                        </div>
+
+                                            <div class="form-group">
+                                              <label for="courseLevel">Level</label>
+                                              <select class="selectpicker form-control" id="courseLevel"></select>
+                                            </div>
+
+                                                        <button type="button" class="btn btn-info btn-block" id="courseSave" onclick="saveCourse(course_id);"></button>
+                                                </form>
+                                        </div>
+                                </div>
+                        </div>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="w3-margin clearfix">
+
+        </div>
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="../js/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/main.js"></script>
         <script src="../../js/main.js"></script>
-	<script src="../js/course.js"></script>
-	<script src="../js/quiz.js"></script>
-	<script src="../js/question.js"></script>
-	<script src="../js/user.js"></script>
-	<script src="../js/typeahead.bundle.min.js"></script>
-	<!-- <script src="../summernote/summernote.min.js"></script> -->
-	<script>
-	var winW = window.outerWidth;
-	if (winW < 768) {
-		$('#navbar').collapse("hide");
-	}
-	//navBarElements();
-	// Fetch URL
-	var url = window.location;
+        <script src="../js/course.js"></script>
+        <script src="../js/quiz.js"></script>
+        <script src="../js/question.js"></script>
+        <script src="../js/user.js"></script>
+        <script src="../js/typeahead.bundle.min.js"></script>
+        <!-- <script src="../summernote/summernote.min.js"></script> -->
+        <script>
+                                                    var winW = window.outerWidth;
+                                                    if (winW < 768) {
+                                                        $('#navbar').collapse("hide");
+                                                    }
+                                                    //navBarElements();
+                                                    // Fetch URL
+                                                    var url = window.location;
 
-	// Check if a specific course is chosen
-	var course_id = getURLParameter(url, 'course_id');
+                                                    // Check if a specific course is chosen
+                                                    var course_id = getURLParameter(url, 'course_id');
 
-	// Need to check if admin is logged in
-
-
-		// Check if device is mobile
-		mobileCheck();
-
-		// Ready whenever you are - document!
-		$(document).ready(function() {
-
-			getCourses(function(courses) {
-				var numCourses = 0;
-				// Fetch number of courses
-				if (courses != null) {
-					numCourses = courses.courses.length;
-				} else {
-					numCourses++;
-				}
-				// Display level options
-				for (var i = 0; i < numCourses; i++) {
-					$('#courseLevel').append('<option value="' + (i + 1) + '">' + (i + 1) + '</option>');
-				}
-			});
-
-			if (course_id != null) {
-
-				// Retrieve course
-				getCourse(course_id, function(course) {
-
-					if (course != null) {
-						// Display course and a save button
-						// Remember that courseDescription is a textarea, so must un escape \n before displaying content
-						$('#courseHeader').html(course['courseTitle']);
-						$('#courseTitle').val(course['courseTitle']);
-						$('#courseLevel').val(course['courseLevel']);
-						//$('#courseDescription').val(course['courseDescription'].replace(/\\\\n/g, '\n'));
-						//$('#courseDescription').code(JSON.parse(course['courseDescription']));
-						$('#courseSave').html('Save Course');
-
-						// Display quiz's for course
-						displayQuizes(course);
-
-						// Display attendant's for course
-						displayAttendants(course);
-
-						// Display mentor's for course
-						displayMentors(course);
-
-						
-					}
-					
-					$('.showCol').show();
-				});
-			} else {
-				// Display a new course label and an add course button
-				$('#courseHeader').html('New Course');
-				$('#courseSave').html('Add Course');
+                                                    // Need to check if admin is logged in
 
 
-			}
+                                                    // Check if device is mobile
+                                                    mobileCheck();
 
-			// Display courses for side nav bar
-			displayCourses();
-		});
+                                                    // Ready whenever you are - document!
+                                                    $(document).ready(function () {
 
-</script>
+                                                        getCourses(function (courses) {
+                                                            var numCourses = 0;
+                                                            // Fetch number of courses
+                                                            if (courses != null) {
+                                                                numCourses = courses.courses.length;
+                                                            } else {
+                                                                numCourses++;
+                                                            }
+                                                            // Display level options
+                                                            for (var i = 0; i < numCourses; i++) {
+                                                                $('#courseLevel').append('<option value="' + (i + 1) + '">' + (i + 1) + '</option>');
+                                                            }
+                                                        });
 
-  </body>
+                                                        if (course_id != null) {
+
+                                                            // Retrieve course
+                                                            getCourse(course_id, function (course) {
+
+                                                                if (course != null) {
+                                                                    // Display course and a save button
+                                                                    // Remember that courseDescription is a textarea, so must un escape \n before displaying content
+                                                                    $('#courseHeader').html(course['courseTitle']);
+                                                                    $('#courseTitle').val(course['courseTitle']);
+                                                                    $('#courseLevel').val(course['courseLevel']);
+                                                                    //$('#courseDescription').val(course['courseDescription'].replace(/\\\\n/g, '\n'));
+                                                                    //$('#courseDescription').code(JSON.parse(course['courseDescription']));
+                                                                    $('#courseSave').html('Save Course');
+
+                                                                    // Display quiz's for course
+                                                                    displayQuizes(course);
+
+                                                                    // Display attendant's for course
+                                                                    displayAttendants(course);
+
+                                                                    // Display mentor's for course
+                                                                    displayMentors(course);
+
+
+                                                                }
+
+                                                                $('.showCol').show();
+                                                            });
+                                                        } else {
+                                                            // Display a new course label and an add course button
+                                                            $('#courseHeader').html('New Course');
+                                                            $('#courseSave').html('Add Course');
+
+
+                                                        }
+
+                                                        // Display courses for side nav bar
+                                                        displayCourses();
+                                                    });
+
+        </script>
+
+    </body>
 </html>
