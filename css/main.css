@@ -1,0 +1,127 @@
+.invalid::-webkit-input-placeholder {
+    color: red;
+}
+.invalid:-moz-placeholder {
+    /* FF 4-18 */
+    color: red;
+}
+.invalid::-moz-placeholder {
+    /* FF 19+ */
+    color: red;
+}
+.invalid:-ms-input-placeholder {
+    /* IE 10+ */
+    color: red;
+}
+
+
+
+/********************************** NAVBAR STYLES **********************************/
+
+body {
+    background-color:  #F6F6F6;
+}
+
+.navbar-default .navbar-nav > li > a{ 
+
+    color: white;
+    border-bottom:1px solid transparent;
+    padding: 15px;
+}
+
+.navbar-default .navbar-nav .active > a,
+.navbar-default .navbar-nav .active > a:hover,
+.navbar-default .navbar-nav .active > a:focus { 
+
+    color: white;
+    border: 3px solid #416f9d;
+    border-radius: 1px;
+    background-color: transparent;
+
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus { 
+	color: white; 
+    border-bottom: 1px solid white;
+    
+    -moz-transition-duration: 0.8s;
+      -webkit-transition-duration: 0.8s;
+      -o-transition-duration: 0.8s;
+
+}
+
+.navbar-default {padding:20px 25px;background:transparent;margin:0;border:none;}
+
+
+#header-wrapper {background:rgb(39, 102, 150);border: none;min-height:100px;}
+
+#show-home{
+	color: white;
+	font-size: 25px
+}
+
+#content-wrapper{
+
+
+}
+
+#logo-brand{
+    color: lightblue;
+}
+
+#parallex{
+    background-image:url('../img/books.png');
+    background-size: 100% auto;
+    background-repeat:no-repeat;
+    margin-bottom: 30px;
+    min-height: 500px
+  }
+
+  .welcome-text{
+    font-size: 35px;
+    padding:10px 35px;
+    text-align:center;
+    margin-top:50px; 
+  }
+
+  .div-opacity{
+    background:#7f7f7f;
+    background:rgba(0,0,0,0.5);
+  }
+
+  #div-divider{
+            border-bottom:1px solid gainsboro;
+            width:70%;
+            margin:auto;
+            margin-bottom:15px;
+            margin-top:15px;
+}
+
+.shadow{
+    box-shadow:0px 2px 4px 0px rgba(0,0,0,0.16), 0px 2px 10px 0px rgba(0,0,0,0.12) !important;
+}
+
+.transition{
+    border:none; 
+    -moz-transition-duration: 0.2s;
+      -webkit-transition-duration: 0.2s;
+      -o-transition-duration: 0.2s;
+}
+
+.transition:hover,
+.transition:focus{
+    padding: 20px;
+    font-size: 25px
+
+  }
+
+.graph-canvas{
+    min-width: 100%;
+    max-width:750px;  
+    min-height: 500px; 
+}
+
+#statistics-side-nav{
+  min-height: 205px;
+}

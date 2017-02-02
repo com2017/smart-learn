@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            #splash{
+                max-width: 100%;
+                height: auto;
+                width: auto\9; / ie8 /
+            }
+        </style>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Smart Learn</title>
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Bootstrap -->
+        <link href="css/w3.css" rel="stylesheet">
+
+        <!-- Custom css -->
+        <link href="css/main.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="header-wrapper">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a id="showhome" class="navbar-brand" href="#" onclick="locateHomePage();"><span id="logo-brand">Smart learn</span></a>
+                </div>
+                
+                <ul class="nav navbar-nav">
+                    <li id="showmentor"><a href="#" onclick="locateMentorHomePage();">Mentor</a></li>
+                    <li id="showstat"><a href="#" onclick="locateStatisticsHomePage();">Statistics</a></li>
+                    <li id="showadmin"><a href="#" onclick="locateAdminHomePage();">Administration</a></li>
+                 
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="dhisHome"><a href="#" onclick="locateDhisHomePage();">DHIS Home</a></li>
+                </ul>
+              </div>
+            </nav>
+        </div>
+         
+        
+        <div id="parallex">
+            <div class="div-opacity welcome-text w3-right">
+                <div style="color: white;">Welcome<br>to<br>Smart-Learn Home</div>
+            </div>
+        </div>
+
+        <div class="clear-both">
+            
+        </div>
+
+        <div id="content-wrapper" class="container-fluid">
+            <div class="row">
+                <div class="container-fluid">
+                     <div class="col-md-8">
+                        <div class="w3-card-2 w3-white" style="height:300px">
+                    
+                        </div>
+                    </div>
+                   
+                   <div class="col-md-4">
+                        <div class="w3-card-2 w3-white" style="height:300px">
+                    
+                        </div>
+                    </div>
+                </div>
+
+               
+            </div>
+
+            <div class="w3-margin">
+                
+            </div>
+
+            <div class="row">
+                <div class="container-fluid">   
+                   <div class="col-md-12">
+                        <div class="w3-card-2 w3-white w3-padding-xxlarge" style="height:300px">
+                            <div class="row">
+                                <div class="container-fluid">
+                                    <div class="col-md-4">
+                                    
+                                    </div>
+                                    <div class="col-md-4">
+                                        
+                                    </div>
+                                    <div class="col-md-4">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="footer-wrapper"  class="w3-padding-xxlarge w3-center text-muted ">
+           Copyright Smart-Learn 2017
+        </div>
+
+
+        <!--div class="container" id="main_div">
+            <img id="splash" src="img/splashscreen.png" height="722" width="793" align="middle">
+        </div>
+
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="js/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+
+        <script src="js/main.js"></script>
+        <script>
+            var main_layout = '<div class="row">';
+            //navBarElements();
+            isCustomizer(function (isCustomizer) {
+                /*
+                 if(!isCustomizer) {
+                 //$('body').empty();
+                 //$('body').html('<br><div class="col-xs-3"></div><div class="container col-xs-6 list-group"><label class="active list-group-item text-center">Must be Superuser to use this App</label></div>');
+                 document.getElementById("showadmin").style.display = "none";
+                 document.getElementById("showstat").style.display = "none";
+                 return;
+                 }
+                 */
+                //main_layout += '</div>';
+                var winW = window.outerWidth;
+                $('#main_div').append(main_layout);
+
+            });
+        </script>
+    </body>
+</html>
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smart-learn Quizes</title>
+
+    <!-- Bootstrap -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- W3.cc -->
+        <link href="../../css/w3.css" rel="stylesheet">
+
+ 	 <!-- Main CSS -->
+  	<link href="../../css/main.css" rel="stylesheet">
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+     <div id="header-wrapper">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a id="showhome" class="navbar-brand" href="#" onclick="locateHomePage();"><span id="logo-brand">Smart learn</span></a>
+                </div>
+                
+                <ul class="nav navbar-nav">
+                    <li class="active" id="showmentor"><a href="#" onclick="locateMentorHomePage();">Mentor</a></li>
+                    <li id="showstat"><a href="#" onclick="locateStatisticsHomePage();">Statistics</a></li>
+                    <li id="showadmin"><a href="#" onclick="locateAdminHomePage();">Administration</a></li>
+                 
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="dhisHome"><a href="#" onclick="locateDhisHomePage();">DHIS Home</a></li>
+                </ul>
+              </div>
+            </nav>
+        </div>
+    <div class="container" id="main_div">
+      <!-- Javascript will fill this container -->
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../../js/jquery.min.js"></script>
+    <!-- Include all other javascript below, including bootstrap -->
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../js/mentor/mentor.js"></script>
+    <script>
+      var winW = window.outerWidth;
+      if(winW < 768){
+        $('#navbar').collapse("hide");
+      }
+      //navBarElements();
+      // Need to check if admin is logged in
+      isCourseMentor(function(isCourseMentor) {
+
+        if (!isCourseMentor) {
+          $('#main_div').empty();
+          $('#main_div').html('<br><div class="col-xs-3"></div><div class="container col-xs-6 list-group"><label class="active list-group-item text-center">Must be mentor to use this App</label></div>');
+          return;
+        }
+      });
+      
+      var main_layout = '<div class="row">';
+      main_layout += '<label class="list-group-item active">Quizes</label>';
+      <!-- Here quizes will be appended -->
+      main_layout +=  '<ul class="list-group-item" id="quizes"></ul>';
+      main_layout += '</div>';
+      $('#main_div').append(main_layout);
+      var url = window.location;
+      var course_id = getURLParameter(url, 'course_id');
+      var student_id = getURLParameter(url, 'student_id');
+      $(document).ready(function() {
+        displayQuizes(course_id, student_id);
+           window.setInterval(function () {
+              displayQuizes(course_id, student_id);
+           }, 1000);
+      });
+    </script>
+  </body>
+</html>

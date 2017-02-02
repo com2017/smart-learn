@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Smart learn</title>
+
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-default" role="navigation">
+            <div id="navbar" class="collapse in" >
+                
+                <ul class="nav navbar-nav">
+                    <li id="showhome"><a href="#" onclick="locateHomePage();">Smart learn</a></li>
+                    <li id="showcourse"><a href="#" onclick="locateTakeCoursePage();">Take Course</a></li>
+                    <li id="showmentor"><a href="#" onclick="locateMentorHomePage();">Mentor</a></li>
+                    <li id="showstat"><a href="#" onclick="locateStatisticsHomePage();">Statistics</a></li>
+                    <li id="showadmin"><a href="#" onclick="locateAdminHomePage();">Administration</a></li>
+                    <li id="dhisHome"><a href="#" onclick="locateDhisHomePage();">DHIS Home</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container" id="main_div">
+            <div class="container col-xs-4 list-group">
+                <label id="user_score" class="active list-group-item text-center">
+                    
+                </label>              
+            </div>
+            <div class="container col-xs-6 list-group">
+                <label id="top_scores" class="active list-group-item text-center">Top 3 Scores</label> 
+                
+            </div>
+        </div>
+
+        
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="js/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="../js/main.js"></script>      
+        <script src="js/course.js"></script>
+        <script src="js/quiz.js"></script>
+        <script src="js/mobilecheck.js"></script>
+        <script src="js/jalc.min.js"></script>
+
+        <script>
+            window.onload = openWin();
+            $(document).ready(function() {
+                showPoints();;
+                topScores();
+            });
+        </script>
+
+        <script src="js/mobilecheck.js"></script>
+
+    </body>
+</html>

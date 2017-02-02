@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Smart-learn Mentor</title>
+        <script src="../../js/jquery.min.js"></script>
+        <!--script type="text/javascript" src="../../js/navigation.js"></script>-->
+
+        <!-- Bootstrap -->
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+         <!-- Font-Awesome -->
+        <link href="../../font awesome/css/font-awesome.min.css" rel="stylesheet"> 
+
+        <!-- W3.cc -->
+        <link href="../../css/w3.css" rel="stylesheet">
+
+        <!-- Custom css -->
+        <link href="../../css/main.css" rel="stylesheet">
+
+    </head>
+    <body>  
+         <div id="header-wrapper">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a id="showhome" class="navbar-brand" href="#" onclick="locateHomePage();"><span id="logo-brand">Smart learn</span></a>
+                </div>
+                
+                <ul class="nav navbar-nav">
+                    <li class="active" id="showmentor"><a href="#" onclick="locateMentorHomePage();">Mentor</a></li>
+                    <li id="showstat"><a href="#" onclick="locateStatisticsHomePage();">Statistics</a></li>
+                    <li id="showadmin"><a href="#" onclick="locateAdminHomePage();">Administration</a></li>
+                 
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="dhisHome"><a href="#" onclick="locateDhisHomePage();">DHIS Home</a></li>
+                </ul>
+              </div>
+            </nav>
+        </div>
+
+
+        <div class="container" id="main_div">
+
+        </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script src="../../js/mentor/mentor.js"></script>
+            <script>
+        var winW = window.outerWidth;
+        if (winW < 768) {
+            $('#navbar').collapse("hide");
+        }
+        //navBarElements()
+        // Need to check if mentor is logged in
+        
+        isCourseMentor(function (isMentor) {
+        if (!isMentor) {
+       
+                $('#main_div').empty();
+                $('#main_div').html('<br><div class="col-xs-3"></div><div class="container col-xs-6 list-group"><label class="active list-group-item text-center">Must be mentor to use this App</label></div>');
+                return;
+            }
+        });
+
+        var main_layout = '<div class="row">';
+        main_layout += '<label class="list-group-item active">Courses</label>';
+<!-- Here courses will be appended -->
+      main_layout +=  '<ul class="list-group-item" id="courses"></ul>';
+      main_layout += '</div>';
+      $('#main_div').append(main_layout);
+      $(document).ready(function() {
+
+           displayCourses();
+
+           window.setInterval(function () {
+              displayCourses();
+           }, 1000);
+
+      });
+        </script>
+    </body>
+</html>
+

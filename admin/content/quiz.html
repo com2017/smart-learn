@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smart learn-Admin - Quiz</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+ 	 <!-- Main CSS -->
+    <link href="../../css/main.css" rel="stylesheet">
+
+  	<!-- Custom css -->
+    <link href="../../css/main.css" rel="stylesheet">
+
+	  <!-- Summmernote -->
+	  <link href="../summernote/summernote.css" rel="stylesheet">
+	  <link href="../css/font-awesome.min.css" rel="stylesheet">
+	
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+      
+      	<div id="header-wrapper">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a id="showhome" class="navbar-brand" href="#" onclick="locateHomePage();"><span id="logo-brand">Smart learn</span></a>
+                </div>
+                
+                <ul class="nav navbar-nav">
+                    <li id="showmentor"><a href="#" onclick="locateMentorHomePage();">Mentor</a></li>
+                    <li id="showstat"><a href="#" onclick="locateStatisticsHomePage();">Statistics</a></li>
+                    <li class="active" id="showadmin"><a href="#" onclick="locateAdminHomePage();">Administration</a></li>
+                 
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="dhisHome"><a href="#" onclick="locateDhisHomePage();">DHIS Home</a></li>
+                </ul>
+              </div>
+            </nav>
+        </div>
+
+  	<div class="container" id="main_div">
+  		<div class="row">
+  			<!-- padd content to center -->
+  			<div class="col-xs-3"></div>
+
+			<div class="col-xs-6 list-group" id="quiz">
+				<label class="list-group-item active" id="quizHeader"></label>
+
+				<form role="form" class="list-group-item">
+					<div class="form-group">
+						<label for="quizTitle">Quiz Title</label>
+						<input type="text" class="form-control" id="quizTitle" placeholder="What is the title for the Quiz?">
+					</div>
+
+					<div class="form-group">
+						<label for="quizDescription">Description</label>
+						<div id="quizDescription"></div>
+					</div>
+
+					<div class="form-group">
+						<label for="quizLevel">Level</label>
+						<select class="selectpicker form-control" id="quizLevel"></select>
+					</div>
+
+					<button type="button" class="btn btn-success btn-block"
+							id="quizSave" onclick="saveQuiz(course_id, quiz_id);"></button>
+
+				</form>
+			</div>
+  		</div>
+  	</div>
+	<br>
+  
+	
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+     <script src="../js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+	<script src="../js/main.js"></script>
+	<script src="../js/course.js"></script>
+	<script src="../js/quiz.js"></script>
+	<script src="../js/question.js"></script>
+	<script src="../summernote/summernote.min.js"></script>
+
+	<script>
+		var winW = window.outerWidth;
+		if(winW < 768){
+			$('#navbar').collapse("hide");
+		}
+		
+		// Fetch URL
+		var url = window.location;
+
+		// Check if a specific course and quiz is chosen
+		var course_id = getURLParameter(url, 'course_id');
+		var quiz_id = getURLParameter(url, 'quiz_id');
+
+		// Need to check if admin is logged in
+		
+
+			// Check if device is mobile
+			mobileCheck();
+
+			// Ready whenever you are - document!
+			$(document).ready(function(){
+				//navBarElements();
+				// Add on level options (This is one more than the number of quizes for course)
+				if(course_id != null) {
+
+					// Fetch course
+					getCourse(course_id, function(course){
+
+						if(course != null) {
+
+							// Fetch all quizes
+							getQuizes(function(quizes) {
+
+								var num_course_quizes = 0;
+
+								// Fetch number of quizes for given course
+								if(quizes != null) {
+									num_course_quizes += $.grep(quizes['quizes'], function(e){ return e.courseID == course['courseID']; }).length;
+								}
+
+								if(quiz_id == null) {
+									num_course_quizes++;
+								}
+
+								// Display level options
+								for(var i = 0; i < num_course_quizes; i++) {
+									$('#quizLevel').append('<option value="' + (i+1) + '">' + (i + 1) + '</option>');
+								}
+
+								// Set up summernote WYSIWYG editor
+								$('#quizDescription').summernote({
+									toolbar: [
+										//[groupname, [button list]]
+
+										['style', ['bold', 'italic', 'underline', 'strikethrough', 'style', 'clear']],
+										['font', ['strikethrough']],
+										['para', ['ul', 'ol', 'paragraph']],
+										['insert', ['link','picture']],
+										['misc', ['fullscreen', 'undo', 'redo', 'help']]
+									]
+								});
+								
+								// Fetch quiz if quiz_id is provided
+								if(quiz_id != null) {
+									getQuiz(quiz_id, function(quiz) {
+										getImages(function(images){
+											// Display quiz and a save button
+											$('#quizHeader').html(quiz['quizTitle']);
+											$('#quizTitle').val(quiz['quizTitle']);
+											if(quiz['quizDescription']){
+												if(images != null){
+													//should check if images is not equal to zero 
+													var images2 = JSON.stringify(images);
+													//console.log("images2: " + images2);
+													//console.log("images: " +images)
+													var ape = JSON.parse(quiz['quizDescription']);
+													var counter = 0;
+													if(images["images"].length > 0){
+														//console.log(images["images"].length);
+														var tempDesc = ape;
+														var counter  = 0;
+														for(var j = 0; j < images["images"].length; j++){
+															console.log("images counter " + counter++)
+															tempDesc = tempDesc.replace('<p>Click on image to enlarge</p>', ''); 
+															tempDesc = tempDesc.replace('imageplaceholder', images["images"][j].imageContent); 
+														}
+														$('#quizDescription').summernote('code', tempDesc);
+													} else {
+														//console.log("ended up inside imageslength not larger than 0")
+														$('#quizDescription').summernote('code', JSON.parse(quiz['quizDescription']));
+													}
+												}else{
+													//console.log("ended up inside images not equal 0")
+													$('#quizDescription').summernote('code', JSON.parse(quiz['quizDescription']));
+												}
+											} 
+											$('#quizLevel').val(quiz['quizLevel']);
+											$('#quizSave').html('Save Quiz');
+											// Display question's for quiz
+											displayQuestions(quiz);
+										});
+									});
+								}  else {
+									// Display a new course label and an add course button
+									$('#quizHeader').html('New Quiz');
+									$('#quizSave').html('Add Quiz');
+								}
+							});
+						}
+					});
+				}
+			});
+	
+
+	</script>
+  </body>
+</html>

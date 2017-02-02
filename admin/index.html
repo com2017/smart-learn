@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Course Writer</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+     <!-- W3 CSS -->
+    <link href="../css/w3.css" rel="stylesheet">
+
+
+    <!-- CSS -->
+    <link href="../css/main.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+ <div id="header-wrapper">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a id="showhome" class="navbar-brand" href="#" onclick="locateHomePage();"><span id="logo-brand">Smart learn</span></a>
+                </div>
+                
+                <div class="nav navbar-nav">
+                    <li id="showmentor"><a href="#" onclick="locateMentorHomePage();">Mentor</a></li>
+                    <li id="showstat"><a href="#" onclick="locateStatisticsHomePage();">Statistics</a></li>
+                    <li class="active" id="showadmin"><a href="#" onclick="locateAdminHomePage();">Administration</a></li>
+                 
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="dhisHome"><a href="#" onclick="locateDhisHomePage();">DHIS Home</a></li>
+                </ul>
+              </div>
+            </nav>
+        </div>
+
+        <div class="w3-margin">
+            
+        </div>
+
+        <div class="w3-margin w3-padding-small">
+            <h6 style="display:inline">Home-></h6><h5 style="display:inline">Administration</h5>
+        </div>
+
+        <div id="custom-div" class="row" >
+            <div class="container-fluid">
+                     <div class="col-md-3">
+                        <div class="w3-card-2 w3-white w3-center" style="padding:30px 0;min-height:400px">
+                            <h4>Courses</h4>
+
+                            <div id="div-divider">
+                                
+                            </div>
+                            <div id="courses" class="list-group">
+                                
+                            </div>
+                            <div id="div-divider">
+                                
+                            </div>
+                            <div class="w3-center w3-padding">
+                                <a href="content/course.html" class=" btn btn-info">New Course</a>
+                            </div>
+                        </div>
+                    </div>
+                   
+                   <div class="col-md-9">
+                        <div class="w3-card-2 w3-white w3-center" style="padding:15px 5px;min-height:400px">
+                            <h4>Courses taken</h4>
+                            
+                            <div id="div-divider">
+                                
+                            </div>
+
+                            <div class="table-responsive">
+                                  <!-- Courses taken will be appended here -->
+                                  <table class="table table-bordered table-hover" id="coursesTaken">
+                                        <thead>
+                                            <tr id="coursesRow">
+                                              <td>&nbsp;</td>
+                                            </tr>
+                                        </thead>
+                                  </table>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <div id="error-message" class="row" style="display:none">
+            <div class="container">
+                <div class="w3-grey w3-padding-large shadow w3-xxlarge">
+                    Must be Superuser to use this App
+                </div>
+            </div>
+        </div>
+
+        <div class="container w3-padding-large" id="main_div">
+
+
+        </div>
+
+		
+	  <!-- PAGE CONTAINER 
+		<div class="w3-content w3-margin-top" style="max-width:1500px;">
+
+			
+			<div class="w3-row-padding"></div>
+
+			<div class="w3-third">
+                <div class="col-md-12 list-group">
+                    <label style="background:rgb(39, 102, 150)" class="list-group-item active">Courses</label>
+
+                   
+                    <ul class="list-group" id="courses">
+                        
+                    </ul>
+
+                   <a href="content/course.html" class="btn-block btn btn-info">New Course</a>
+                </div>
+			</div>
+			
+			<div class="w3-twothird">
+                <div class="col-md-12 list-group">
+                  <label style="background:rgb(39, 102, 150)" class="list-group-item active">Courses taken</label>
+
+                  <div style="overflow-x: auto; border: 1px solid #DDD;">
+                     
+                      <table class="table table-bordered table-hover" id="coursesTaken">
+                            <thead>
+                                <tr id="coursesRow">
+                                  <td>&nbsp;</td>
+                                </tr>
+                            </thead>
+                      </table>
+                  </div>
+                </div>
+			</div>
+        </div>
+       End of Right Panel-->
+       
+    </div>
+    <br> 
+
+
+        <div id="footer-wrapper" class="w3-padding-xxlarge w3-center w3-bottom text-muted ">
+           Copyright Smart-Learn 2017
+        </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="js/course.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/question.js"></script>
+    <script src="js/user.js"></script>
+    <script>
+        //testing loading spinner
+        /*
+        $(document)
+        .ajaxStart(function(){
+            $("#ajaxSpinnerImage").show();
+        })
+        .ajaxStop(function(){
+            $("#ajaxSpinnerImage").hide();
+        });
+        */
+
+        var winW = window.outerWidth;
+        if(winW < 768){
+            $('#navbar').collapse("hide");
+        }
+        //navBarElements();
+        // Need to check if admin is logged in
+
+
+        // Check if device is mobile
+        mobileCheck();
+
+        // Ready whenever you are - document!
+
+        $(document).ready(function(){
+
+            displayCourses();
+            displayCoursesTaken();
+        });
+
+    </script>
+  </body>
+</html>
+
