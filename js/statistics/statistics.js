@@ -183,6 +183,7 @@ function displayStats() {
         url: urlCourses,
         dataType: 'json'
     }).success(function(courses) {
+        console.log(JSON.stringify(courses));
             $.ajax({
                     url: urlQuizes,
                     dataType: 'json'

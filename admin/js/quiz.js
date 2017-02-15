@@ -197,7 +197,7 @@ function saveQuiz(course_id, quiz_id) {
         
         setQuizes(JSON.stringify(quizes), function() {
             setImages(quizID2, JSON.stringify(images), function() {
-                window.location.href = getAppRoot() + '/content/course.html?course_id=' + course_id;
+                window.location.href = getAppRoot() + 'content/course.html?course_id=' + course_id;
             });
         });
         
@@ -242,7 +242,7 @@ function deleteQuiz(course_id, quiz_id) {
 
                     // Update courses on server and go to menu over courses
                     setQuizes(JSON.stringify(quizes), function() {
-                        window.location.href = getAppRoot() + '/content/course.html?course_id=' + course_id;
+                        window.location.href = getAppRoot() + 'content/course.html?course_id=' + course_id;
                     });
                 } else {
                     alert("Can't delete: " + quiz[0].quizTitle + " cause it contains questions.");

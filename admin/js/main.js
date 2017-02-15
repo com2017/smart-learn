@@ -248,3 +248,29 @@ function isCourseMentor(handler){
 
 	});
 }
+
+function locateDhisHomePage(){
+     var url=getHostRoot() + '/'+getDHISInstallFolder();
+        window.location.href =url;
+}
+function locateHomePage(){
+        var url=getHostRoot() + '/'+getDHISInstallFolder()+'/api/apps/smart-learn/index.html';
+        window.location.href =url;
+}
+//function locateTakeCoursePage(){
+//        var url=getHostRoot() + '/'+getDHISInstallFolder()+'/api/apps/smart-learn/user/index.html';
+//        window.location.href =url;
+//}
+function locateMentorHomePage(){
+        var url=getHostRoot() + '/'+getDHISInstallFolder()+'/api/apps/smart-learn/pages/mentor/mentor.html';
+        window.location.href =url;
+}
+function locateStatisticsHomePage(){
+        var url=getHostRoot() + '/'+getDHISInstallFolder()+'/api/apps/smart-learn/pages/statistics/statistics.html';
+        window.location.href =url;
+}
+function locateAdminHomePage(){
+        var url=getHostRoot() + '/'+getDHISInstallFolder()+'/api/apps/smart-learn/admin/index.html';
+        window.location.href =url;
+}
+
