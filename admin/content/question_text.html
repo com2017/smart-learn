@@ -9,11 +9,13 @@
     <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-	  <!-- Main CSS -->
+	  <!-- Custom css -->
+    <link href="../css/w3.css" rel="stylesheet"> 
+
+    <!-- Main CSS -->
     <link href="../../css/main.css" rel="stylesheet">
 
-	  <!-- Custom css -->
-    <link href="../../css/main.css" rel="stylesheet">
+	 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -48,11 +50,12 @@
 	<div class="container" id="main_div">
   		
   		<div class="row">
+  		<div class="w3-padding-large"></div>
   			<!-- padd content to center -->
   			<div class="col-xs-3"></div>
   			
   			<div class="col-xs-6 list-group" id="question">
-				<label class="list-group-item active" id="questionHeader"></label>
+				<label style="background:rgb(39, 102, 150)" class="list-group-item active" id="questionHeader"></label>
 
 				<form role="form" class="list-group-item">
 					<input type="hidden" id="questionType" value="text">
@@ -71,7 +74,7 @@
 						<textarea class="form-control" id="questionAnswer" rows="6" cols="60" placeholder="What is the answer?"></textarea>
 					</div>
 
-					<button type="button" class="btn btn-success btn-block" id="questionSave" onclick="saveQuestion(course_id, quiz_id, question_id);"></button>
+					<button type="button" class="btn btn-info btn-block" id="questionSave" onclick="saveQuestion(course_id, quiz_id, question_id);"></button>
 				</form>
   			</div>
 		</div>

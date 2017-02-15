@@ -9,11 +9,13 @@
     <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-	  <!-- Main CSS -->
+	<!-- Custom css -->
+    <link href="../css/w3.css" rel="stylesheet">
+
+    <!-- Main CSS -->
     <link href="../../css/main.css" rel="stylesheet">
 
-	  <!-- Custom css -->
-    <link href="../../css/main.css" rel="stylesheet">
+	 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -46,13 +48,13 @@
         </div>
 
 	<div class="container" id="main_div">
-  		
+  		<div class="w3-padding-large"></div>
   		<div class="row">
   			<!-- padd content to center -->
   			<div class="col-xs-3"></div>
   			
   			<div class="col-xs-6" id="question">
-				<label class="list-group-item active" id="questionHeader"></label>
+				<label style="background:rgb(39, 102, 150)" class="list-group-item active" id="questionHeader"></label>
 
 				<input type="hidden" id="questionType" value="multiple">
 
@@ -81,7 +83,7 @@
 						</div><!-- /.col-lg-9 -->
 						<div class="col-lg-6">
 							<div class="input-group pull-right">
-								<button type="button" id="questionSave" class="btn btn-success" onclick="saveQuestion(course_id, quiz_id, question_id);"></button>
+								<button type="button" id="questionSave" class="btn btn-info" onclick="saveQuestion(course_id, quiz_id, question_id);"></button>
 							</div><!-- /input-group -->
 						</div>
 					</div><!-- /.row -->
