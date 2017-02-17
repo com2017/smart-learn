@@ -9,11 +9,12 @@
     <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
+  	<!-- Custom css -->
+    <link href="../css/w3.css" rel="stylesheet">
+
  	 <!-- Main CSS -->
     <link href="../../css/main.css" rel="stylesheet">
 
-  	<!-- Custom css -->
-    <link href="../../css/main.css" rel="stylesheet">
 
 	  <!-- Summmernote -->
 	  <link href="../summernote/summernote.css" rel="stylesheet">
@@ -49,13 +50,15 @@
             </nav>
         </div>
 
+
   	<div class="container" id="main_div">
+  	<div class="w3-padding-large"></div>
   		<div class="row">
   			<!-- padd content to center -->
   			<div class="col-xs-3"></div>
 
 			<div class="col-xs-6 list-group" id="quiz">
-				<label class="list-group-item active" id="quizHeader"></label>
+				<label class="list-group-item active" id="quizHeader" style="background:rgb(39, 102, 150)"></label>
 
 				<form role="form" class="list-group-item">
 					<div class="form-group">
@@ -73,11 +76,12 @@
 						<select class="selectpicker form-control" id="quizLevel"></select>
 					</div>
 
-					<button type="button" class="btn btn-success btn-block"
+					<button type="button" class="btn btn-info btn-block"
 							id="quizSave" onclick="saveQuiz(course_id, quiz_id);"></button>
-
 				</form>
+				<div class="w3-padding-large">try out div</div>
 			</div>
+
   		</div>
   	</div>
 	<br>
