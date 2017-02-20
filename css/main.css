@@ -51,10 +51,13 @@ body {
 
 }
 
-.navbar-default {padding:20px 25px;background:transparent;margin:0;border:none;}
+.navbar-default {padding:10px 15px;background:transparent;margin:0;border:none;}
 
 
-#header-wrapper {background:rgb(39, 102, 150);border: none;min-height:100px;}
+#header-wrapper {
+  background:rgb(39, 102, 150);
+  border: none;
+  min-height:35px;}
 
 #show-home{
 	color: white;
