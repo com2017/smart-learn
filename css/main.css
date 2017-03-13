@@ -59,46 +59,51 @@ body {
   border: none;
   min-height:35px;}
 
-
-#content-wrapper{
-
-
-}
-
 #logo-brand{
     color: lightblue;
     font-size: 25px;
 }
 
-#parallex{
-    background-image:url('../img/books.png');
-    background-color: white;
-    background-size:100% auto;
-    background-repeat:no-repeat;
-    margin-bottom: 30px;
-    min-height: 500px
-  }
-  
-  .welcome-text{
-    font-size: 35px;
-    padding:10px 35px;
-    text-align:center;
-    margin-top:50px; 
-
-  }
-
-  .div-opacity{
-    background:#7f7f7f;
-    background: rgba(0,0,0,0.5);
+.div-opacity{
+    background: rgba(0,0,0,0.3);
     
-  }
+  } 
 
-  #div-divider{
-            border-bottom:1px solid gainsboro;
-            width:70%;
-            margin:auto;
-            margin-bottom:15px;
-            margin-top:15px;
+.row.content{
+    height: 512px;
+    background:url('../img/e-learning.jpg') no-repeat fixed;
+    background-size: cover;
+    position: relative;
+}
+
+.sidenav{
+    padding-top: 20px;
+    height:100%;
+}
+footer{
+    background: rgb(39, 102, 150);
+    padding:18px;
+    bottom: 0;
+    left: 0;
+    width:100%;
+    position: absolute;
+}
+
+h1{
+    text-align: center;
+}
+
+#smart-learn{
+    text-align: center;
+    padding-top: 
+}
+
+#div-divider{
+    border-bottom:1px solid gainsboro;
+    width:70%;
+    margin:auto;
+    margin-bottom:15px;
+    margin-top:15px;
 }
 
 .shadow{
