@@ -2,4 +2,9 @@ this is just to see what happens with git.
 
 guess im getting the hang of it all. goodie goodie!
 
-what happens after modifying.
+what happens after modifying?
+--you will have to use git add again to overwrite existing file.
+--git commit ?9i have no idea (yet) what this does exactly.
+--git push to have the local file show up on git hub.
+
+what happens after modifying online?
