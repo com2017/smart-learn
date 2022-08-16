@@ -4,7 +4,12 @@ guess im getting the hang of it all. goodie goodie!
 
 what happens after modifying?
 --you will have to use git add again to overwrite existing file.
---git commit ?9i have no idea (yet) what this does exactly.
+--git commit? i have no idea (yet) what this does exactly.
 --git push to have the local file show up on git hub.
 
 what happens after modifying online?
+--no need for git status (it seems this looks at the status of the local
+  repository alone.
+--git pull to 'pull' the changes made online.
+
+at what point does git merge work?
